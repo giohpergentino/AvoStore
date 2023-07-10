@@ -1,0 +1,113 @@
+let usuarios = [];
+
+let p = document.getElementsByTagName('p');
+
+const form = document.getElementById('form');
+
+const maxSenha = 10;
+const minSenha = 6;
+const maxCPF = 11;
+
+if (localStorage.getItem('cadastrados')) {
+    usuarios = JSON.parse(localStorage.getItem('cadastrados'));
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    cadastrar();
+});
+
+function validarEmail(email) {
+    // Não pode ter espaços em branco antes e depois do '@'
+    // Tem que conter um '@'
+    // Tem que conter pelo menos 1 caractere após o '@' e após o '.'
+    const val = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return val.test(email);
+}
+
+function cadastrar() {
+    let getNome = document.getElementById('nome').value;
+
+    let getSenha = document.getElementById('senha').value;
+
+    let getCPF = document.getElementById('cpf').value;
+
+    let getEmail = document.getElementById('email').value;
+
+    let getNasc = document.getElementById('dataNascimento').value;
+
+    let getData = document.getElementById('dataCriacao');
+
+    let data = new Date();
+
+    // Cria um objeto Date com a data atual
+    const agora = new Date();
+
+    // Obtém o dia, mês e ano atuais
+    const dia = agora.getDate();
+    const mes = agora.getMonth() + 1; // adiciona 1 porque o mês começa em 0
+    const ano = agora.getFullYear();
+
+    // Formata a data atual em uma string
+    const dataAtual = `${dia}/${mes}/${ano}`;
+
+    let usuario = {
+        nome: getNome.toLowerCase().trim(),
+        senha: getSenha,
+        cpf: getCPF,
+        email: getEmail,
+        dataConta: `${data.getUTCDate()}/${data.getMonth() + 1}/${data.getFullYear()}`,
+    };
+
+    if (
+        getNome.length > 2 &&
+        getNome.trim().length != 0 &&
+        getSenha.length > minSenha || getSenha.length < maxSenha &&
+        getSenha.trim().length != 0 &&
+        getCPF.length == maxCPF &&
+        validarEmail(getEmail)
+    ) {
+        if (findUser(getNome) == -1) {
+            usuarios.push(usuario);
+            localStorage.setItem('cadastrados', JSON.stringify(usuarios));
+            alert('Usuário cadastrado!');
+            location.assign('login/login.html');
+        } else {
+            alert('Usuário já cadastrado! Tente novamente.');
+        }
+    }
+
+    if (getNome.length <= 2 || getNome.trim().length === 0) {
+        p[0].innerHTML = 'ERRASSE BOY TE LIGA';
+        setTimeout(() => {
+            p[0].innerHTML = '';
+        }, 2000);
+    }
+
+    if (getSenha.length < minSenha || getSenha.length > maxSenha || getSenha.trim().length === 0) {
+        p[1].innerHTML = 'ERRASSE BOY TE LIGA';
+        setTimeout(() => {
+            p[1].innerHTML = '';
+        }, 2000);
+    }
+
+    if (getCPF.length != maxCPF || getCPF.trim().length === 0) {
+        p[2].innerHTML = 'ERRASSE BOY TE LIGA';
+        setTimeout(() => {
+            p[2].innerHTML = '';
+        }, 2000);
+    }
+    if (!validarEmail(getEmail)) {
+        p[3].innerHTML = 'Email inválido!';
+        setTimeout(() => {
+            p[3].innerHTML = '';
+        }, 2000);
+    }
+}
+function findUser(nome) {
+    let index = usuarios.findIndex((element) => {
+        return element.nome == nome;
+    });
+
+    return index;
+}
