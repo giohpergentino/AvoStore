@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AvoStore - A loja dos amantes de abacate</title>
+    <link rel="shortcut icon" type="image/png" href="../../../img/AvoStore_Logo.png" />
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <header>
+        <img src="../../../img/AvoStore_Logo.png" alt="" id="logo">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#">Indoor/Outdoor</a>
+                    <ul>
+                        <li>
+                            <a href="#">Cabanas</a>
+                        </li>
+                        <li>
+                            <a href="#">Conjuntos</a>
+                        </li>
+                        <li>
+                            <a href="#">Móveis</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Diversos</a>
+                    <ul>
+                        <li>
+                            <a href="#">Peças de roupa</a>
+                        </li>
+                        <li>
+                            <a href="#">Instrumentos</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main>
+        <section id="banner">
+            <h1>Bem-vindo à AvoStore!</h1>
+            <p>A sua loja especializada em produtos relacionados a abacates</p>
+        </section>
+        <section id="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="../../../img/catalogo/Abacate-movel.jpg" alt="">
+                    <img src="../../../img/catalogo/camaverdelimao.jpg" alt="">
+                    <img src="../../../img/catalogo/violão.jpg" alt="">
+                    <img src="../../../img/catalogo/meias.jpg" alt="">
+                </div>
+            </div>
+            <button id="botaoVoltar">&#10094;</button>
+            <button id="botaoAvancar">&#10095;</button>
+        </section>
+        <section id="novidades">
+            <h2>Novidades</h2>
+            <div class="produtos-container">
+                <div class="produto">
+                    <img src="../../../img/catalogo/Abacate-movel.jpg" alt="">
+                    <h3>Cabana em formato de abacate</h3>
+                    <p>R$ 1199,99</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="produto">
+                    <img src="../../../img/catalogo/camaverdelimao.jpg" alt="">
+                    <h3>Conjunto de cama abacatinhos</h3>
+                    <p>R$ 599,99</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="produto">
+                    <img src="../../../img/catalogo/violão.jpg" alt="">
+                    <h3>Violão em formato de abacate</h3>
+                    <p>R$ 399,99</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="produto">
+                    <img src="../../../img/catalogo/meias.jpg" alt="">
+                    <h3>Meias de abacate</h3>
+                    <p>R$ 29,99</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="produto">
+                    <img src="../../../img/catalogo/Abacate-cadeira-praia.jpg" alt="">
+                    <h3>Cadeira de praia infantil de abacates</h3>
+                    <p>R$ 89,99</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="produto">
+                    <img src="../../../img/catalogo/mesa.jpg" alt="">
+                    <h3>Mesinha de abacate</h3>
+                    <p>R$ 119,99</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>AvoStore - Todos os direitos reservados ®</p>
+    </footer>
+    <script src="home.js"></script>
+</body>
+
+</html>
