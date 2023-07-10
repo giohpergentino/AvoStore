@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AvoStore - Cadastro</title>
+    <link rel="shortcut icon" type="image/png" href="../img/AvoStore_Logo.png"/>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <header>
+        <img src="../img/AvoStore_Logo.png" alt="AvoStore sua loja ">
+    </header>
+    <div class="background"></div>
+    <form id="form">
+        <h1>Tela de Cadastro</h1>
+        <label for="nome">Nome</label>
+        <input type="text" name="" id="nome" placeholder="Ex: Fulano" />
+        <p></p>
+        <label for="senha">Senha</label>
+        <input type="password" name="" id="senha" placeholder="Ex: 123456" />
+        <p></p>
+        <label for="cpf">CPF</label>
+        <input type="text" name="" id="cpf" placeholder="Ex: 999.999.999-99" />
+        <p></p>
+        <label for="email">E-mail</label>
+        <input type="text" name="" id="email" placeholder="Ex: fulano@gmail.com" />
+        <p></p>
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" name="dataNascimento" id="dataNascimento">
+        <p></p>
+        <button type="submit">Cadastrar</button>
+        <p></p>
+        <div>
+            Já tem uma conta?
+            <a href="login/login.html">
+                Login
+            </a>
+        </div>
+    </form>
+    <script src="index.js"></script>
+</body>
+
+</html>
